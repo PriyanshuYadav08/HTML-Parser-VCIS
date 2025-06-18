@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Log Viewer</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background: linear-gradient(120deg, #f3e7e9 0%, #e3eeff 100%);
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        color: #6c3483;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-shadow: 1px 1px 6px #fff;
+      }
+      .table-container {
+        background: #fff;
+        border-radius: 16px; 
+        box-shadow: 0 4px 24px rgba(108, 52, 131, 0.08);
+        margin: 30px auto 40px auto;
+        padding: 24px 32px 32px 32px;
+        max-width: 1100px;
+        overflow-x: auto;
+      }
+      table.logs {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 15px;
+        background: #faf9fd;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(224, 64, 216, 0.08);
+      }
+      th, td {
+        border: 2px solid rgb(0, 0, 0);
+        padding: 12px 14px;
+        text-align: center;
+      }
+      th {
+        background: linear-gradient(90deg, #e040d8 0%, #6c3483 100%);
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+      tr:nth-child(even) td {
+        background: #f3e7f3;
+      }
+      tr:hover td {
+        background: #e3eeff;
+        transition: background 0.2s;
+      }
+      td {
+        color: #333;
+        vertical-align: middle;
+      }
+      @media (max-width: 800px) {
+        .table-container {
+          padding: 10px;
+        }
+        th, td {
+          padding: 8px 6px;
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-container">
+      <h1>Log File 1</h1>
+      <table class="logs">
+        <tr>
+          <th>IP</th>
+          <th>Timestamp</th>
+          <th>Method</th>
+          <th>URL</th>
+          <th>Protocol</th>
+          <th>Status</th>
+          <th>Byte</th>
+          <th>Referrer</th>
+          <th>User Info</th>
+        </tr>
+        {% for log in logs1 %}
+          <tr>
+            <td>{{ log.ip }}</td>
+            <td>{{ log.timestamp }}</td>
+            <td>{{ log.method }}</td>
+            <td>{{ log.url }}</td>
+            <td>{{ log.protocol }}</td>
+            <td>{{ log.status }}</td>
+            <td>{{ log.byte }}</td>
+            <td>{{ log.referrer }}</td>
+            <td>{{ log.user_info }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="table-container">
+      <h1>Log File 2</h1>
+      <table class="logs">
+        <tr>
+          <th>IP</th>
+          <th>Timestamp</th>
+          <th>Method</th>
+          <th>URL</th>
+          <th>Protocol</th>
+          <th>Status</th>
+          <th>Byte</th>
+          <th>Referrer</th>
+          <th>User Info</th>
+        </tr>
+        {% for log in logs2 %}
+          <tr>
+            <td>{{ log.ip }}</td>
+            <td>{{ log.timestamp }}</td>
+            <td>{{ log.method }}</td>
+            <td>{{ log.url }}</td>
+            <td>{{ log.protocol }}</td>
+            <td>{{ log.status }}</td>
+            <td>{{ log.byte }}</td>
+            <td>{{ log.referrer }}</td>
+            <td>{{ log.user_info }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
