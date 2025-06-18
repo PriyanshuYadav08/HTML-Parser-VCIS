@@ -21,3 +21,6 @@ def display_logs():
     logs1 = parse_logs('D:/HTML-Parser-VCIS/1.txt')
     logs2 = parse_logs('D:/HTML-Parser-VCIS/2.txt')
     return render_template('logs.html', logs1=logs1, logs2=logs2)
+
+if __name__ == "__main__":
+    app.run(debug=True)
