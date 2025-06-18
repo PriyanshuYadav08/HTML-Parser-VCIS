@@ -1,5 +1,9 @@
 from flask import Flask, render_template
+import os
+from dotenv import load_dotenv
 import re
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -23,4 +27,4 @@ def display_logs():
     return render_template('logs.html', logs1=logs1, logs2=logs2)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host=os.getenv("my_ip_add"), port=5000)
