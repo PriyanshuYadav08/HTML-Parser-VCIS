@@ -1,0 +1,17 @@
+IP Address 
+
+Timestamp
+
+Method 
+
+URL
+
+Protocol
+
+Status 
+
+Byte
+
+Referrer 
+
+User Information
